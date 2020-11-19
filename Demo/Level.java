@@ -1,4 +1,4 @@
-package Game;
+package Demo;
 
 import Engine.Component;
 import Engine.GameObject;

@@ -1,4 +1,4 @@
-package Game;
+package Demo;
 
 import Engine.Component;
 import Engine.GameObject;
@@ -28,7 +28,7 @@ public class Player extends Component {
 
         AffineTransform position = new AffineTransform(1, 0, 0, 1, 0, 0);
         this.position = new AffineTransform(position);
-        this.position.translate((Game.engine.getWidth()/2) - Game.size/Game.ratio, (Game.engine.getHeight()/2) - Game.size/Game.ratio);
+        this.position.translate((Demo.engine.getWidth()/2) - Demo.size/Demo.ratio, (Demo.engine.getHeight()/2) - Demo.size/Demo.ratio);
 
         headIndex = 0;
         tempHead = headIndex;
@@ -39,7 +39,7 @@ public class Player extends Component {
         moving = false;
 
         try {
-            Image img = Game.assetsCenter.getImage("boiS.png", headIndex);
+            Image img = Demo.assetsCenter.getImage("boiS.png", headIndex);
             int width = img.getWidth(null);
             int height = img.getHeight(null);
 
@@ -59,13 +59,13 @@ public class Player extends Component {
             int speed = 8;
 
             try {
-                Image img = Game.assetsCenter.getImage("boiS.png", headIndex);
-                Image img1 = Game.assetsCenter.getImage("boiS.png", bodyIndex);
+                Image img = Demo.assetsCenter.getImage("boiS.png", headIndex);
+                Image img1 = Demo.assetsCenter.getImage("boiS.png", bodyIndex);
                 int size = img.getWidth(null);
                 int length = img.getHeight(null) + img1.getHeight(null);
 
 
-                if (Game.inputHandler.inputs.contains("D")) {
+                if (Demo.inputHandler.inputs.contains("D")) {
                     headIndex = 2;
                     tempHead = headIndex;
                     bodyIndex = 18;
@@ -75,7 +75,7 @@ public class Player extends Component {
                     childPosition.translate(speed, 0);
                 }
 
-                if (Game.inputHandler.inputs.contains("A")) {
+                if (Demo.inputHandler.inputs.contains("A")) {
                     headIndex = 6;
                     tempHead = headIndex;
                     bodyIndex = 28;
@@ -85,7 +85,7 @@ public class Player extends Component {
                     childPosition.translate(-speed, 0);
                 }
 
-                if (Game.inputHandler.inputs.contains("W")) {
+                if (Demo.inputHandler.inputs.contains("W")) {
                     headIndex = 4;
                     tempHead = headIndex;
                     bodyIndex = 8;
@@ -95,7 +95,7 @@ public class Player extends Component {
                     childPosition.translate(0, -speed);
                 }
 
-                if (Game.inputHandler.inputs.contains("S")) {
+                if (Demo.inputHandler.inputs.contains("S")) {
                     headIndex = 0;
                     tempHead = headIndex;
                     bodyIndex = 8;
@@ -105,7 +105,7 @@ public class Player extends Component {
                     childPosition.translate(0, speed);
                 }
 
-                if (Game.inputHandler.inputs.isEmpty()) {
+                if (Demo.inputHandler.inputs.isEmpty()) {
                     moving = false;
                 }
 
@@ -113,19 +113,19 @@ public class Player extends Component {
             }
         }
 
-        if(Game.inputHandler.inputs.contains("C")){
+        if(Demo.inputHandler.inputs.contains("C")){
             lockControls = true;
         }
 
-        if(Game.inputHandler.inputs.contains("G")){
+        if(Demo.inputHandler.inputs.contains("G")){
             lockControls = false;
         }
     }
 
     @Override
     public void graphics(Graphics2D G) throws ResourceNotFound {
-        Image img1 = Game.assetsCenter.getImage("boiS.png", headIndex);
-        Image img2 = Game.assetsCenter.getImage("boiS.png", bodyIndex);
+        Image img1 = Demo.assetsCenter.getImage("boiS.png", headIndex);
+        Image img2 = Demo.assetsCenter.getImage("boiS.png", bodyIndex);
         runAnimation();
         G.drawImage(img2, childPosition, null);
         G.drawImage(img1, this.position, null);

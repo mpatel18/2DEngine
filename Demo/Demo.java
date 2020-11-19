@@ -1,4 +1,4 @@
-package Game;
+package Demo;
 
 import Engine.*;
 
@@ -7,7 +7,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public class Game {
+public class Demo {
 
     public static EngineCore engine;
     public static InputHandler inputHandler;

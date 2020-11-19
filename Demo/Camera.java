@@ -1,4 +1,4 @@
-package Game;
+package Demo;
 
 import Engine.Component;
 import Engine.GameObject;
@@ -23,46 +23,46 @@ public class Camera extends Component {
             int distance = 10;
             double scale = 1;
 
-            if (Game.inputHandler.inputs.contains("D")) {
+            if (Demo.inputHandler.inputs.contains("D")) {
                 parent.position.translate(distance, 0);
             }
 
-            if (Game.inputHandler.inputs.contains("A")) {
+            if (Demo.inputHandler.inputs.contains("A")) {
                 parent.position.translate(-distance, 0);
             }
 
-            if (Game.inputHandler.inputs.contains("W")) {
+            if (Demo.inputHandler.inputs.contains("W")) {
                 parent.position.translate(0, -distance);
             }
 
-            if (Game.inputHandler.inputs.contains("S")) {
+            if (Demo.inputHandler.inputs.contains("S")) {
                 parent.position.translate(0, distance);
             }
 
-            if (Game.inputHandler.inputs.contains("Up")) {
+            if (Demo.inputHandler.inputs.contains("Up")) {
                 scale = scale + 0.1;
                 parent.position.scale(scale, scale);
             }
 
-            if (Game.inputHandler.inputs.contains("Down")) {
+            if (Demo.inputHandler.inputs.contains("Down")) {
                 scale = scale - 0.1;
                 parent.position.scale(scale, scale);
             }
 
-            if (Game.inputHandler.inputs.contains("Right")) {
+            if (Demo.inputHandler.inputs.contains("Right")) {
                 parent.position.rotate(.1);
             }
 
-            if (Game.inputHandler.inputs.contains("Left")) {
+            if (Demo.inputHandler.inputs.contains("Left")) {
                 parent.position.rotate(-.1);
             }
         }
 
-        if(Game.inputHandler.inputs.contains("C")){
+        if(Demo.inputHandler.inputs.contains("C")){
             cameraControl = true;
         }
 
-        if(Game.inputHandler.inputs.contains("G")){
+        if(Demo.inputHandler.inputs.contains("G")){
             cameraControl = false;
         }
     }
