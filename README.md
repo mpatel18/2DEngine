@@ -17,7 +17,7 @@
  - Right,Left Arrows to rotate camera
 
 ## Demo
-The engine demo is simple. There is one player object and one enemy object. The engine demonstrates the ability to move these objects, use the engine, and test the two objects collsions.
+The engine demo is simple. There is one player object and one enemy object. The engine demonstrates the ability to move these objects, use the engine's world camera, and test the two objects collsions.
 
 ## Disclamier 
 Current Assets are not owned by me, all right belong to studio71games
